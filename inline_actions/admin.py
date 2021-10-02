@@ -118,7 +118,7 @@ class BaseInlineActionsMixin:
             ]
             buttons.append(
                 '<input type="submit" name="{}" value="{}" class="{}">'.format(
-                    '_action__{}'.format('__'.join(action_data)),
+                    '_action__{}'.format('____'.join(action_data)),
                     description,
                     css_classes,
                 )
@@ -240,7 +240,7 @@ class InlineActionsModelAdminMixin(BaseInlineActionsMixin):
             raw_action_name = all_actions[0].replace('_action__', '', 1)
 
             # resolve action and target models
-            raw_action_parts = raw_action_name.split('__')
+            raw_action_parts = raw_action_name.split('____')
             admin_class_name, admin_type = raw_action_parts[:2]
             action, app_label, model_name, object_pk = raw_action_parts[2:]
 
